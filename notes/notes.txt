@@ -48,5 +48,8 @@ search(INDEX, SEARCH_QUERY).each do |result|
   foo
 end
 
+knife node run_list add node1 'recipe[users]'
+knife node run_list remove node1 'recipe[apache::ip-logger]'
+
 
 Differences in search.

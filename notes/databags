@@ -1,0 +1,42 @@
+data bag is a container for items represent information not related to structure
+key:value store of attributes
+
+
+➜  chef-repo git:(master) ✗ knife search users "*:*"
+2 items found
+
+chef_type: data_bag_item
+comment:   Bobo T. Clown
+data_bag:  users
+gid:       0
+home:      /home/bobo
+id:        bobo
+shell:     /bin/bash
+uid:       2000
+
+chef_type: data_bag_item
+comment:   Frank Belson
+data_bag:  users
+gid:       0
+home:      /home/frank
+id:        frank
+shell:     /bin/bash
+uid:       2001
+
+
+➜  chef-repo git:(master) ✗ knife search users "*:*" -a shell
+2 items found
+
+data_bag_item_users_bobo:
+  shell: /bin/bash
+
+data_bag_item_users_frank:
+  shell: /bin/bash
+
+➜  chef-repo git:(master) ✗ knife search users "id:bobo" -a shell
+1 items found
+
+data_bag_item_users_bobo:
+  shell: /bin/bash
+
+knife data_bag create groups
