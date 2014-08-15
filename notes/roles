@@ -1,0 +1,43 @@
+Role Ruby DSL
+
+"database"
+"web server"
+"monitoring"
+...are all roles
+
+conveniently encapsulate run lists and attributes
+
+easy to configure many nodes identically
+
+'roles' directory in chef-repo
+
+can be created via API and knife, but by source shows history
+
+➜  chef-repo git:(master) ✗ knife search role "run_list:recipe\[apache\]"
+1 items found
+
+chef_type:           role
+default_attributes:
+  apache:
+    sites:
+      admin:
+        port: 8000
+description:         Web Server
+env_run_lists:
+json_class:          Chef::Role
+name:                webserver
+override_attributes:
+run_list:            recipe[apache]
+
+
+➜  chef-repo git:(master) ✗ knife search node "role:webserver" -a apache.sites
+1 items found
+
+node1:
+  apache.sites:
+    admin:
+      port: 8000
+    clownbows:
+      port: 80
+    unibears:
+      port: 81
