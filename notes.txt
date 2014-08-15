@@ -1,0 +1,52 @@
+➜  chef-repo git:(master) knife search node "ipaddress:10.*" - searches nodes
+1 items found
+
+Node Name:   node1
+Environment: _default
+FQDN:        centos63.example.com
+IP:          10.160.201.90
+Run List:    recipe[apache], recipe[motd]
+Roles:
+Recipes:     apache, motd, apache::default, motd::default
+Platform:    centos 6.4
+Tags:
+
+➜  chef-repo git:(master) knife search node "*:*" -a ipaddress - searches for specific value
+1 items found
+
+node1:
+  ipaddress: 10.160.201.90
+
+
+➜  chef-repo git:(master) knife search node "ipaddress:10* AND platform:centos"
+1 items found
+
+Node Name:   node1
+Environment: _default
+FQDN:        centos63.example.com
+IP:          10.160.201.90
+Run List:    recipe[apache], recipe[motd]
+Roles:
+Recipes:     apache, motd, apache::default, motd::default
+Platform:    centos 6.4
+Tags:
+
+➜  chef-repo git:(master) ✗ knife search node "ipaddress:[10.0.* TO 10.2.*]"
+1 items found
+
+Node Name:   node1
+Environment: _default
+FQDN:        centos63.example.com
+IP:          10.160.201.90
+Run List:    recipe[apache], recipe[motd]
+Roles:
+Recipes:     apache, motd, apache::default, motd::default
+Platform:    centos 6.4
+Tags:
+
+search(INDEX, SEARCH_QUERY).each do |result|
+  foo
+end
+
+
+Differences in search.
