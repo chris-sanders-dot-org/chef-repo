@@ -1,0 +1,12 @@
+Cookbook version constraints and override attributes
+
+environment vs organization
+
+cookbook version constraints
+
+can share cookbooks between environments
+
+isolates resources inside an organization
+
+"knife environment list"
+can never edit the _default environment

@@ -1,0 +1,4 @@
+7970  knife cookbook site search chef-client
+ 7971  knife cookbook site show chef-client
+ 7972  knife cookbook site download chef-client
+ 7973* tar -xzvf chef-client-3.7.0.tar.gz -C cookbooks/
